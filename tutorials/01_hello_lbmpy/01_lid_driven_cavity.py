@@ -30,11 +30,8 @@ if cupy:
     target = ps.Target.GPU
 
 # Create simulation (explain what these parameters mean)
-simulation = lbmpy.create_lid_driven_cavity(
-    domain_size=(50, 50),     # 50x50 grid points
-    relaxation_rate=1.6       # Controls fluid viscosity
-)
-
+simulation =  create_lid_driven_cavity(domain_size=(100, 100),
+                               lbm_config=LBMConfig(method=Method.SRT, relaxation_rate=1.6))
 
 
 # =====================================================================
@@ -50,4 +47,21 @@ simulation.run(100)  # 100 time steps
 plt.figure(figsize=(8, 6))
 plt.vector_field(simulation.velocity_slice(), step=3)
 plt.title("Velocity Field in Lid-Driven Cavity")
-plt.savefig("hello_lbmpy_lid_driven_cavity.png")
+plt.savefig("lid_driven_cavity_srt.png")
+plt.clf()
+
+# =====================================================================
+# ||                     4) Repeat process using MRT               ||
+# =====================================================================
+
+# Create simulation (explain what these parameters mean)
+simulation =  create_lid_driven_cavity(domain_size=(100, 100),
+                               lbm_config=LBMConfig(method=Method.MRT, relaxation_rate=1.6))
+print("Running simulation...")
+simulation.run(100)  # 100 time steps
+
+plt.figure(figsize=(8, 6))
+plt.vector_field(simulation.velocity_slice(), step=3)
+plt.title("Velocity Field in Lid-Driven Cavity")
+plt.savefig("lid_driven_cavity_mrt.png")
+plt.clf()
