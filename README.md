@@ -34,7 +34,7 @@ A sequential learning path with 6 progressive modules:
 - **Key Learning**: Basic lbmpy workflow and visualization
 
 #### 1. **Hello lbmpy** (`01_hello_lbmpy/`)
-*This section introduces basic LBM workflows using pre-configured scenarios [See Link](http://pycodegen.pages.i10git.cs.fau.de/lbmpy/notebooks/01_tutorial_hello_lbmpy.html).*
+*This section introduces basic LBM workflows using pre-configured scenarios [See Link](https://pycodegen.pages.i10git.cs.fau.de/lbmpy/notebooks/01_tutorial_predefinedScenarios.html).*
 - **01_lid_driven_cavity.py**: 2D and 3D cavity flow with varying relaxation rates
 - **02_fully_periodic_flow.py**: Shear layer development and vorticity analysis
 - **03_fully_periodic_flow_animation.py**: Advanced animation techniques
