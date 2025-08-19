@@ -1,0 +1,5 @@
+pystencils
+lbmpy
+matplotlib
+ipython
+ipywidgets
